@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>servlet_jsp_notes</display-name>
+	
+	<context-param>
+		<param-name>country</param-name>
+		<param-value>Greece</param-value>
+	</context-param>
+	
+	<servlet>
+		<servlet-name>MyServlet</servlet-name>
+		<servlet-class>servlets.MyServlet</servlet-class>
+		<init-param>
+			<param-name>color</param-name>
+			<param-value>Blue</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>MyServlet</servlet-name>
+		<url-pattern>/myServlet</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>30</session-timeout>
+		<!-- Application will use cookies for session tracking -->
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/views/error_404.jsp</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/WEB-INF/views/error_java.jsp</location>
+	</error-page>
+	
+	<jsp-config>
+		<!-- disable or enable EL -->
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<el-ignored>false</el-ignored>
+		</jsp-property-group>
+		<!-- disable or enable scripts -->
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<scripting-invalid>false</scripting-invalid>
+		</jsp-property-group>
+	</jsp-config>
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>
