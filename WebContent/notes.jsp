@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html" pageEncoding="utf-8"%>
 
 <!-- JSTL -->
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-	<!-- import jar into  web-inf/lib -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!-- import jar into  web-inf/lib -->
 
 <!-- import class -->
 <%@ page import = "classes.User" %>
@@ -87,7 +87,7 @@
 	${colors[0]}		<!-- or ${colors["0"]} arrays, lists -->
 	${users["1"].name}	<!-- mix of . and [] -->
 	${item.product.code} <!-- or ${item["product"].code}nested properties -->
-	<!-- email is an attribute and is evaluated as a key to retrive an element and then the name -->
+	<!-- email is an attribute and is evaluated as a key to retrieve an element and then the name -->
 	${usersMap[email].name} <!-- ${usersMap["email"].name} will return empty string -->
 	${userMaps[emails[0]].name} <!-- nested [] -->
 	${param.name} <!-- get request parameter name -->

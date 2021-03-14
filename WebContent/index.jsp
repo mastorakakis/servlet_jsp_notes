@@ -14,6 +14,7 @@
 	
 	<a href="<c:url value = '/test' />">Test Servlet with jstl</a>
 	
-	${user.name }
+	<c:out value="${user.name}" /> 
+	<c:out value="${message }" default="No message" /> 
 </body>
 </html>
